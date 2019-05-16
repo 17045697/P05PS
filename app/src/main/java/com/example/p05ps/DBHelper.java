@@ -9,6 +9,12 @@ import android.util.Log;
 public class DBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "songs.db";
     private static final int DATABASE_VERSION = 1;
+    private static final String TABLE_NOTE = "note";
+    private static final String COLUMN_ID = "_id";
+    private static final String COLUMN_SONG_TITLE = "song_title";
+    private static final String COLUMN_SONG_SINGERS = "song_singers";
+    private static final String COLUMN_SONG_YEAR = "song_year";
+    private static final String COLUMN_SONG_STARS = "song_stars";
 
 
     public DBHelper(Context context) {
@@ -17,7 +23,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createSongTableSql = "CREATE TABLE SONG( _id integer primary key autoincrement, title TEXT, singers TEXT, year integer, stars integer)";
+        String createSongTableSql =  "CREATE TABLE " + TABLE_NOTE + "("
+                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + COLUMN_SONG_TITLE + " TEXT ," + COLUMN_SONG_SINGERS + " TEXT, " + COLUMN_SONG_YEAR + "INTEGER," + COLUMN_SONG_STARS + "INTEGER )";
+
         db.execSQL(createSongTableSql);
         Log.i("info","created tables");
 
@@ -27,6 +36,10 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + "SONG");
         onCreate(db);
+    }
+
+    public long insertSong() {
+
     }
 
     public int deleteNote(int id){
