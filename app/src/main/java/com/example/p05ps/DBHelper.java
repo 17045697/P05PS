@@ -125,8 +125,12 @@ public class DBHelper extends SQLiteOpenHelper {
             do {
 
                 int id = cursor.getInt(0);
-                String content = cursor.getString(1);
-                songs.add("ID:" + id + ", " + content);
+                String title = cursor.getString(1);
+                String singer = cursor.getString(2);
+                int year = cursor.getInt(3);
+                int stars = cursor.getInt(4);
+                Song obj = new Song(id, title, singer, year, stars);
+                songs.add(obj);
 
             } while (cursor.moveToNext());
         }
