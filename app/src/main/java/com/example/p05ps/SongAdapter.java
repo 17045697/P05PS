@@ -1,6 +1,7 @@
 package com.example.p05ps;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,9 +45,11 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
         Song currentSong = song.get(position);
 
+
         tvSongTitle.setText(currentSong.getTitle());
         tvSongSinger.setText(currentSong.getSingers());
-        tvSongYear.setText(currentSong.getYears());
+        String years = Integer.toString(currentSong.getYears());
+        tvSongYear.setText(years);
 
         ivSong.setImageResource(R.drawable.ic_library_music);
 

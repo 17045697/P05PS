@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this,
                         SecondActivity.class);
-                startActivityForResult(i, 9);
+                startActivity(i);
             }
 
 
