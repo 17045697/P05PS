@@ -50,6 +50,8 @@ public class SongAdapter extends ArrayAdapter<Song> {
         tvSongSinger.setText(currentSong.getSingers());
         tvSongYear.setText(currentSong.getYears());
 
+        ivSong.setImageResource(R.drawable.ic_library_music);
+
         if(currentSong.getStars() == 5) {
             ivStar.setImageResource(R.drawable.star);
             ivStar2.setImageResource(R.drawable.star);

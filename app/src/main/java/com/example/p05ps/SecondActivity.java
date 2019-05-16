@@ -28,7 +28,7 @@ public class SecondActivity extends AppCompatActivity {
         aa = new SongAdapter(this,R.layout.custom_layout,songal);
         DBHelper db = new DBHelper(SecondActivity.this);
         ArrayList<String> data = db.getAllSongs();
-        aa = new SongAdapter(this,R.layout.custom_layout,);
+        aa = new SongAdapter(this, R.layout.custom_layout, songal);
         lv.setAdapter(aa);
 
 
