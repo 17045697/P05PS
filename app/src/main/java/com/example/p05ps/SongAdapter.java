@@ -15,7 +15,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
     private ArrayList<Song> song;
     private Context context;
     private TextView tvSongYear, tvSongTitle, tvSongSinger;
-    private ImageView ivSong;
+    private ImageView ivSong, ivStar, ivStar2, ivStar3, ivStar4, ivStar5;
 
     public SongAdapter(Context context, int resource, ArrayList<Song> objects){
         super(context, resource, objects);
@@ -35,10 +35,14 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
         tvSongTitle = rowView.findViewById(R.id.tvSongTitle);
         tvSongSinger = rowView.findViewById(R.id.tvSongSinger);
-        tvSongYear = rowView.findViewById(R.id.tvYear);
+        tvSongYear = rowView.findViewById(R.id.tvSongYear);
 
         ivSong = rowView.findViewById(R.id.ivSong);
-
+        ivStar = rowView.findViewById(R.id.ivStar);
+        ivStar2 = rowView.findViewById(R.id.ivStar2);
+        ivStar3 = rowView.findViewById(R.id.ivStar3);
+        ivStar4 = rowView.findViewById(R.id.ivStar4);
+        ivStar5 = rowView.findViewById(R.id.ivStar5);
 
         Song currentSong = song.get(position);
 
@@ -46,7 +50,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
         tvSongSinger.setText(currentSong.getSingers());
         tvSongYear.setText(currentSong.getYears());
 
-        if(currentFood.isStar()) {
+        if(currentSong.isStar()) {
             ivStar.setImageResource(R.drawable.star);
         }
         else {

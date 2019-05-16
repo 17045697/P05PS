@@ -20,13 +20,8 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        lv = this.findViewById(R.id.lv);
-
-        lv = new ArrayList<Song>();
-        lv.add(new Song());
-
-
-        aa = new
+        btnShow = findViewById(R.id.btnShow);
+        songal = new ArrayList<Song>();
 
     }
 }
