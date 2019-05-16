@@ -45,6 +45,15 @@ public class Main3Activity extends AppCompatActivity {
                 data.setYear(Integer.parseInt(etYear.getText().toString()));
 
             }
+
+        });
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DBHelper dbh = new DBHelper(Main3Activity.this);
+                dbh.deleteSong(data.getId());
+                dbh.close();
+            }
         });
 
     }
