@@ -1,5 +1,6 @@
 package com.example.p05ps;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,9 +42,38 @@ public class MainActivity extends AppCompatActivity {
                 int selectedButtonid = rg.getCheckedRadioButtonId();
                 RadioButton rb = findViewById(selectedButtonid);
 
+
                 DBHelper db = new DBHelper(MainActivity.this);
+                long row_affected = db.insertSong(song, singer, year, selectedButtonid);
+                db.close();
+
+                if (row_affected != -1) {
+                    Toast.makeText(MainActivity.this, "Insert successful",
+                            Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
+
+        btnShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent i = new Intent(MainActivity.this,
+//                        SecondActivity.class);
+//                startActivityForResult(i, 9);
+            }
+
+
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode,
+                                    Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK && requestCode == 9) {
+
+        }
     }
 }
