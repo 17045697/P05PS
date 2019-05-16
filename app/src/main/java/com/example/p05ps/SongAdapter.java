@@ -50,12 +50,54 @@ public class SongAdapter extends ArrayAdapter<Song> {
         tvSongSinger.setText(currentSong.getSingers());
         tvSongYear.setText(currentSong.getYears());
 
-        if(currentSong.isStar()) {
+        if(currentSong.getStars() == 5) {
             ivStar.setImageResource(R.drawable.star);
+            ivStar2.setImageResource(R.drawable.star);
+            ivStar3.setImageResource(R.drawable.star);
+            ivStar4.setImageResource(R.drawable.star);
+            ivStar5.setImageResource(R.drawable.star);
+
         }
+        else if(currentSong.getStars() == 4) {
+            ivStar.setImageResource(R.drawable.star);
+            ivStar2.setImageResource(R.drawable.star);
+            ivStar3.setImageResource(R.drawable.star);
+            ivStar4.setImageResource(R.drawable.star);
+            ivStar5.setImageResource(R.drawable.nostar);
+        }
+
+        else if(currentSong.getStars() == 3) {
+            ivStar.setImageResource(R.drawable.star);
+            ivStar2.setImageResource(R.drawable.star);
+            ivStar3.setImageResource(R.drawable.star);
+            ivStar4.setImageResource(R.drawable.nostar);
+            ivStar5.setImageResource(R.drawable.nostar);
+        }
+
+        else if(currentSong.getStars() == 2) {
+            ivStar.setImageResource(R.drawable.star);
+            ivStar2.setImageResource(R.drawable.star);
+            ivStar3.setImageResource(R.drawable.nostar);
+            ivStar4.setImageResource(R.drawable.nostar);
+            ivStar5.setImageResource(R.drawable.nostar);
+        }
+
+        else if(currentSong.getStars() == 1) {
+            ivStar.setImageResource(R.drawable.star);
+            ivStar2.setImageResource(R.drawable.nostar);
+            ivStar3.setImageResource(R.drawable.nostar);
+            ivStar4.setImageResource(R.drawable.nostar);
+            ivStar5.setImageResource(R.drawable.nostar);
+        }
+
         else {
             ivStar.setImageResource(R.drawable.nostar);
+            ivStar2.setImageResource(R.drawable.nostar);
+            ivStar3.setImageResource(R.drawable.nostar);
+            ivStar4.setImageResource(R.drawable.nostar);
+            ivStar5.setImageResource(R.drawable.nostar);
         }
+
 
         return rowView;
     }
