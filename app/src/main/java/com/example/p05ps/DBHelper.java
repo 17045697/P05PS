@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "songs.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 3;
     private static final String TABLE_SONG = "song";
     private static final String COLUMN_ID = "_id";
     private static final String COLUMN_SONG_TITLE = "song_title";
@@ -26,7 +26,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createSongTableSql =  "CREATE TABLE " + TABLE_SONG + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + COLUMN_SONG_TITLE + " TEXT ," + COLUMN_SONG_SINGERS + " TEXT, " + COLUMN_SONG_YEAR + "INTEGER," + COLUMN_SONG_STARS + "INTEGER )";
+                + COLUMN_SONG_TITLE + " TEXT ," + COLUMN_SONG_SINGERS + " TEXT, " + COLUMN_SONG_YEAR + " INTEGER, " + COLUMN_SONG_STARS + " INTEGER )";
 
         db.execSQL(createSongTableSql);
         Log.i("info","created tables");
@@ -111,8 +111,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
     
 
-    public ArrayList<String> getAllSongs() {
-        ArrayList<String> songs = new ArrayList<String>();
+    public ArrayList<Song> getAllSongs() {
+        ArrayList<Song> songs = new ArrayList<Song>();
 
         String selectQuery = "SELECT " + COLUMN_ID + "," + COLUMN_SONG_TITLE +
                 "," + COLUMN_SONG_SINGERS + "," + COLUMN_SONG_YEAR + "," + COLUMN_SONG_STARS +

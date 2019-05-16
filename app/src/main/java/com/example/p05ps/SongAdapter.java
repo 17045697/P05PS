@@ -19,9 +19,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
     public SongAdapter(Context context, int resource, ArrayList<Song> objects){
         super(context, resource, objects);
-
         song = objects;
-
         this.context = context;
     }
 
@@ -49,6 +47,8 @@ public class SongAdapter extends ArrayAdapter<Song> {
         tvSongTitle.setText(currentSong.getTitle());
         tvSongSinger.setText(currentSong.getSingers());
         tvSongYear.setText(currentSong.getYears());
+
+        ivSong.setImageResource(R.drawable.ic_library_music);
 
         if(currentSong.getStars() == 5) {
             ivStar.setImageResource(R.drawable.star);
