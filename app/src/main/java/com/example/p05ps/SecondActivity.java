@@ -23,5 +23,6 @@ public class SecondActivity extends AppCompatActivity {
         btnShow = findViewById(R.id.btnShow);
         songal = new ArrayList<Song>();
 
+
     }
 }
