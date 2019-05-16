@@ -19,9 +19,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
     public SongAdapter(Context context, int resource, ArrayList<Song> objects){
         super(context, resource, objects);
-
         song = objects;
-
         this.context = context;
     }
 

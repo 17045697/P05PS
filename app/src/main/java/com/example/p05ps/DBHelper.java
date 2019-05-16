@@ -110,8 +110,8 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-    public ArrayList<String> getAllSongs() {
-        ArrayList<String> songs = new ArrayList<String>();
+    public ArrayList<Song> getAllSongs() {
+        ArrayList<Song> songs = new ArrayList<Song>();
 
         String selectQuery = "SELECT " + COLUMN_ID + "," + COLUMN_SONG_TITLE +
                 "," + COLUMN_SONG_SINGERS + "," + COLUMN_SONG_YEAR + "," + COLUMN_SONG_STARS +
