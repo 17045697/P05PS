@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
                 int year = Integer.parseInt(etYear.getText().toString());
                 RadioGroup rg = findViewById(R.id.rg);
                 int selectedButtonid = rg.getCheckedRadioButtonId();
-                RadioButton rb = findViewById(selectedButtonid);
 
 
                 DBHelper db = new DBHelper(MainActivity.this);
@@ -58,9 +57,9 @@ public class MainActivity extends AppCompatActivity {
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent i = new Intent(MainActivity.this,
-//                        SecondActivity.class);
-//                startActivityForResult(i, 9);
+                Intent i = new Intent(MainActivity.this,
+                        SecondActivity.class);
+                startActivityForResult(i, 9);
             }
 
 

@@ -1,12 +1,10 @@
 package com.example.p05ps;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
 import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
